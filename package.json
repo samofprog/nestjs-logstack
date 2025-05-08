@@ -1,0 +1,75 @@
+{
+  "name": "@samofprog/nestjs-logstack",
+  "version": "1.0.0",
+  "description": "Configurable Winston logger for NestJS with daily file rotation and console output.",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist/cjs/**/*",
+    "dist/esm/**/*",
+    "dist/types/**/*"
+  ],
+  "scripts": {
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "clean": "rimraf dist",
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
+    "publish:local": "yarn build && yalc publish",
+    "publish:online": "yarn build && npm publish --access public",
+    "lint": "eslint 'src/**/*.{js,ts}' --fix",
+    "format": "prettier --write 'src/**/*.ts'"
+  },
+  "keywords": [
+    "nestjs",
+    "logger",
+    "winston",
+    "logging",
+    "logstack",
+    "typescript",
+    "nest-winston",
+    "log",
+    "daily-rotate",
+    "nest"
+  ],
+  "author": "samuel assemien <sa.assemien@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samofprog/nestjs-logstack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samofprog/nestjs-logstack/issues"
+  },
+  "homepage": "https://github.com/samofprog/nestjs-logstack#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "globals": "^16.0.0",
+    "prettier": "3.5.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.14",
+    "@types/node": "^22.15.16",
+    "nest-winston": "^1.10.2",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "peerDependencies": {
+    "nest-winston": "^1.10.2",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}
