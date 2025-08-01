@@ -1,6 +1,6 @@
 {
   "name": "@samofprog/nestjs-logstack",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "description": "Configurable Winston logger for NestJS with daily file rotation and console output.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -61,7 +61,7 @@
     "typescript-eslint": "^8.29.1"
   },
   "dependencies": {
-    "@nestjs/common": "^11.0.14",
+    "@nestjs/common": "^11.1.5",
     "@types/node": "^22.15.16",
     "nest-winston": "^1.10.2",
     "winston": "^3.17.0",
